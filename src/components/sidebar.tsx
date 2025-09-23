@@ -27,7 +27,7 @@ function Sidebar() {
                 </div>
               </div>
 
-              <div className={"grid gap-2"}>
+              <nav className={"grid gap-2"}>
                 {linkGroup.links.map((link, j) => (
                   <a
                     href={link.url}
@@ -40,7 +40,7 @@ function Sidebar() {
                     {link.title}
                   </a>
                 ))}
-              </div>
+              </nav>
             </div>
             {sidebarData[i+1] && (<div className={"border border-slate-100 w-full height-[1px]"}></div>)}
           </React.Fragment>
