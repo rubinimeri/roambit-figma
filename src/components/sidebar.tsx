@@ -6,7 +6,7 @@ function Sidebar() {
   return (
     <div
       data-slot="sidebar"
-      className={"bg-sidebar border border-slate-100 flex h-[1471px] w-[276px] flex-col text-slate-900"}
+      className={"bg-sidebar border border-slate-100 flex h-[1471px] w-[276px] flex-col shrink-0 text-slate-900"}
     >
       <div className={"py-[26px] pl-5 flex justify-between border border-slate-100"}>
         <img src="/logo-light.png" alt="logo" width={124} className={"h-7"}/>
@@ -33,7 +33,7 @@ function Sidebar() {
                     href={link.url}
                     key={j}
                     className={clsx(
-                      "flex gap-3 px-4 py-[10px] ",
+                      "flex gap-3 px-4 py-[10px] text-sm",
                       link.title === "Dashboard" && "bg-primary rounded-2xl font-bold"
                     )}>
                     <img src={link.iconUrl} alt="icon" width={20} className={"h-5"}/>
