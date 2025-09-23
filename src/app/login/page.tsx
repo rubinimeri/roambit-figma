@@ -1,6 +1,7 @@
-import CaretDown from '../../../public/login/caret-down.svg'
+import React from "react";
+import Input from "@/components/ui/input";
 
-function Page() {
+export default function Page() {
   return (
     <div className={"px-30"}>
 
@@ -16,8 +17,7 @@ function Page() {
         <form className={"mx-auto max-w-[480px] mt-[72px] grid gap-8"}>
           <div className={"grid gap-4"}>
             <div className={"relative"}>
-              <input
-                className={"w-full border bg-white border-slate-200 pl-[46px] pr-4 py-3 focus:border-slate-900 outline-none rounded-2xl"}
+              <Input
                 type="text"
                 name={"email"}
                 placeholder={"Email"}/>
@@ -29,8 +29,7 @@ function Page() {
               />
             </div>
             <div className={"relative"}>
-              <input
-                className={"w-full border bg-white border-slate-200 pl-[46px] pr-11 py-3 focus:border-slate-900 outline-none rounded-2xl"}
+              <Input
                 type="text"
                 name={"password"}
                 placeholder={"Password"}/>
@@ -81,5 +80,3 @@ function Page() {
     </div>
   );
 }
-
-export default Page;
