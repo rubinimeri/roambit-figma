@@ -70,7 +70,7 @@ function LoginForm() {
         {error && <p className={"text-red-500"}>{error}</p>}
       </div>
       <button
-        className={"bg-primary py-3 px-8 rounded-2xl font-semibold cursor-pointer h-11"}
+        className={"bg-primary py-3 px-8 rounded-2xl font-semibold cursor-pointer h-11 hover:opacity-90"}
         type="submit">
         {loading ?
           <img src="/login/loading.png" width={24} alt="loading" className={"animate-spin mx-auto"}/> :
