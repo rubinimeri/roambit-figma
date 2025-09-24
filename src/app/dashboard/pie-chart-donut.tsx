@@ -92,18 +92,18 @@ export function PieChartDonut({ className }: { className?: string }) {
           </PieChart>
         </ChartContainer>
         <div className={"grid grid-cols-2 gap-4"}>
-          <p className={"text-sm text-slate-600 flex items-center gap-2"}>
+          <div className={"text-sm text-slate-600 flex items-center gap-2"}>
             <div className={"w-3 h-3 rounded-full bg-indigo-500"}></div>
             Category 1
-          </p>
-          <p className={"text-sm text-slate-600 flex items-center gap-2"}>
+          </div>
+          <div className={"text-sm text-slate-600 flex items-center gap-2"}>
             <div className={"w-3 h-3 rounded-full bg-yellow-500"}></div>
             Category 2
-          </p>
-          <p className={"text-sm text-slate-600 flex items-center gap-2"}>
+          </div>
+          <div className={"text-sm text-slate-600 flex items-center gap-2"}>
             <div className={"w-3 h-3 rounded-full bg-teal-500"}></div>
             Category 3
-          </p>
+          </div>
         </div>
       </CardContent>
     </Card>
