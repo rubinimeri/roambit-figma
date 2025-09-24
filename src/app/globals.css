@@ -47,4 +47,10 @@ body {
     .btn-header {
         @apply px-4 py-3 bg-white rounded-xl cursor-pointer;
     }
+    .link-primary {
+        @apply bg-primary font-bold text-slate-900
+    }
+    .link-hover {
+        @apply hover:bg-primary hover:text-slate-900 transition-colors duration-200
+    }
 }
