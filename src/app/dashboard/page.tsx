@@ -1,5 +1,6 @@
 import React from 'react';
 import Sidebar from "@/components/sidebar";
+import ChartAreaGradient from "@/app/dashboard/chart-area-gradient";
 
 function Page() {
   return (
@@ -28,87 +29,92 @@ function Page() {
             </button>
           </div>
         </header>
-        <main className={"grid gap-4 p-4 grid-flow-col"}>
-          <article className="p-5 bg-white grid gap-6 rounded-3xl">
-            <header>
-              <h2 className={"flex items-center gap-2"}>
+        <main className={"grid p-4 gap-4"}>
+          <div className={"grid gap-4 grid-flow-col"}>
+            <article className="p-5 bg-white grid gap-6 rounded-3xl">
+              <header>
+                <h2 className={"flex items-center gap-2"}>
                 <span aria-hidden="true">
                   <img src="/dashboard/people.png" alt="people" className={"w-5 h-5"}/>
                 </span>
-                Total Resellers
-              </h2>
-            </header>
+                  Total Resellers
+                </h2>
+              </header>
 
-            <div className={"grid gap-2"}>
-              <p className="text-[28px]">
-                <strong>1,221</strong>
-              </p>
+              <div className={"grid gap-2"}>
+                <p className="text-[28px]">
+                  <strong>1,221</strong>
+                </p>
 
-              <p className="text-[#00a86b] text-xs" aria-label="Increased by 56.9 percent">
-                +56.9%
-              </p>
-            </div>
-          </article>
-          <article className="p-5 bg-white grid gap-6 rounded-3xl">
-            <header>
-              <h2 className={"flex items-center gap-2"}>
+                <p className="text-[#00a86b] text-xs" aria-label="Increased by 56.9 percent">
+                  +56.9%
+                </p>
+              </div>
+            </article>
+            <article className="p-5 bg-white grid gap-6 rounded-3xl">
+              <header>
+                <h2 className={"flex items-center gap-2"}>
                 <span aria-hidden="true">
                   <img src="/dashboard/people.png" alt="people" className={"w-5 h-5"}/>
                 </span>
-                Total Credits Issued
-              </h2>
-            </header>
+                  Total Credits Issued
+                </h2>
+              </header>
 
-            <div className={"grid gap-2"}>
-              <p className="text-[28px]">
-                <strong>32.892</strong>
-              </p>
+              <div className={"grid gap-2"}>
+                <p className="text-[28px]">
+                  <strong>32.892</strong>
+                </p>
 
-              <p className="text-[#00a86b] text-xs" aria-label="Increased by 56.9 percent">
-                +29.9%
-              </p>
-            </div>
-          </article>
-          <article className="p-5 bg-white grid gap-6 rounded-3xl">
-            <header>
-              <h2 className={"flex items-center gap-2"}>
+                <p className="text-[#00a86b] text-xs" aria-label="Increased by 56.9 percent">
+                  +29.9%
+                </p>
+              </div>
+            </article>
+            <article className="p-5 bg-white grid gap-6 rounded-3xl">
+              <header>
+                <h2 className={"flex items-center gap-2"}>
                 <span aria-hidden="true">
                   <img src="/dashboard/people.png" alt="people" className={"w-5 h-5"}/>
                 </span>
-                Total Transactşons
-              </h2>
-            </header>
+                  Total Transactşons
+                </h2>
+              </header>
 
-            <div className={"grid gap-2"}>
-              <p className="text-[28px]">
-                <strong>237</strong>
-              </p>
+              <div className={"grid gap-2"}>
+                <p className="text-[28px]">
+                  <strong>237</strong>
+                </p>
 
-              <p className="text-[#00a86b] text-xs" aria-label="Increased by 56.9 percent">
-                +12.4%
-              </p>
-            </div>
-          </article>
-          <article className="p-5 bg-white grid  gap-6 rounded-3xl">
-            <header>
-              <h2 className={"flex items-center gap-2"}>
+                <p className="text-[#00a86b] text-xs" aria-label="Increased by 56.9 percent">
+                  +12.4%
+                </p>
+              </div>
+            </article>
+            <article className="p-5 bg-white grid  gap-6 rounded-3xl">
+              <header>
+                <h2 className={"flex items-center gap-2"}>
                 <span aria-hidden="true">
                   <img src="/dashboard/people.png" alt="people" className={"w-5 h-5"}/>
                 </span>
-                Total eSIM Orders
-              </h2>
-            </header>
+                  Total eSIM Orders
+                </h2>
+              </header>
 
-            <div className={"grid gap-2"}>
-              <p className="text-[28px]">
-                <strong>18.905</strong>
-              </p>
+              <div className={"grid gap-2"}>
+                <p className="text-[28px]">
+                  <strong>18.905</strong>
+                </p>
 
-              <p className="text-[#00a86b] text-xs" aria-label="Increased by 56.9 percent">
-                +29.7%
-              </p>
-            </div>
-          </article>
+                <p className="text-[#00a86b] text-xs" aria-label="Increased by 56.9 percent">
+                  +29.7%
+                </p>
+              </div>
+            </article>
+          </div>
+          <div className={""}>
+            <ChartAreaGradient className={"py-5 border-none shadow-none w-1/2 bg-white"}/>
+          </div>
         </main>
       </div>
     </div>
