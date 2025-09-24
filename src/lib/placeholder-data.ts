@@ -90,3 +90,9 @@ export const barChartData = [
   { month: "July", value: 178 },
   { month: "August", value: 270 },
 ]
+
+export const pieChartData = [
+  { category: "Category 1", value: 275, fill: "var(--color-categoryOne)" },
+  { category: "Category 2", value: 200, fill: "var(--color-categoryTwo)" },
+  { category: "Category 3", value: 187, fill: "var(--color-teal-500)" },
+]
