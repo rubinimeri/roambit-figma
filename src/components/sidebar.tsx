@@ -33,8 +33,8 @@ function Sidebar() {
                     href={link.url}
                     key={j}
                     className={clsx(
-                      "flex gap-3 px-4 py-[10px] text-sm",
-                      link.title === "Dashboard" && "bg-primary rounded-2xl font-bold"
+                      "flex gap-3 px-4 py-[10px] text-sm text-slate-700",
+                      link.title === "Dashboard" && "bg-primary rounded-2xl font-bold text-slate-900"
                     )}>
                     <img src={link.iconUrl} alt="icon" width={20} className={"h-5"}/>
                     {link.title}

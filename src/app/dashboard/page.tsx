@@ -2,6 +2,7 @@ import React from 'react';
 import Sidebar from "@/components/sidebar";
 import ChartAreaGradient from "@/app/dashboard/chart-area-gradient";
 import BarChart from "./bar-chart"
+import {PieChartDonut} from "@/app/dashboard/pie-chart-donut";
 
 function Page() {
   return (
@@ -116,6 +117,9 @@ function Page() {
           <div className={"flex gap-4"}>
             <ChartAreaGradient className={"py-5 border-none shadow-none flex-1 bg-white"}/>
             <BarChart className={"py-5 border-none shadow-none flex-1 bg-white"} />
+          </div>
+          <div className={"grid grid-cols-3 gap-4"}>
+            <PieChartDonut className={"py-5 border-none shadow-none bg-white"} />
           </div>
         </main>
       </div>
