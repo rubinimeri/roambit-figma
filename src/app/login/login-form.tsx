@@ -23,7 +23,7 @@ function LoginForm() {
     await sleep(1000);
 
     if (email === exampleData.email && password === exampleData.password) {
-      redirect('/')
+      redirect('/dashboard')
     }
 
     setLoading(false);
