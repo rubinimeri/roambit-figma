@@ -3,6 +3,7 @@ import Sidebar from "@/components/sidebar";
 import ChartAreaGradient from "@/app/dashboard/chart-area-gradient";
 import BarChart from "./bar-chart"
 import {PieChartDonut} from "@/app/dashboard/pie-chart-donut";
+import DashboardTable from "@/app/dashboard/dashboard-table";
 
 function Page() {
   return (
@@ -120,7 +121,9 @@ function Page() {
           </div>
           <div className={"grid grid-cols-3 gap-4"}>
             <PieChartDonut className={"py-5 border-none shadow-none bg-white"} />
+            <DashboardTable className={"col-span-2"} />
           </div>
+          <DashboardTable />
         </main>
       </div>
     </div>

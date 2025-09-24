@@ -71,14 +71,14 @@ export function PieChartDonut({ className }: { className?: string }) {
                       >
                         <tspan
                           x={viewBox.cx}
-                          y={(viewBox.cy || 0) - 15}
+                          y={(viewBox.cy || 0)}
                           className="text-[32px] font-bold"
                         >
                           12
                         </tspan>
                         <tspan
                           x={viewBox.cx}
-                          y={(viewBox.cy || 0) + 24 - 10}
+                          y={(viewBox.cy || 0) + 24}
                           className="fill-slate-400 text-xl"
                         >
                           adet
@@ -89,12 +89,22 @@ export function PieChartDonut({ className }: { className?: string }) {
                 }}
               />
             </Pie>
-            <ChartLegend
-              content={<ChartLegendContent nameKey="category" />}
-              className="-translate-y-2 flex-wrap gap-2 *:basis-1/4 *:justify-center"
-            />
           </PieChart>
         </ChartContainer>
+        <div className={"grid grid-cols-2 gap-4"}>
+          <p className={"text-sm text-slate-600 flex items-center gap-2"}>
+            <div className={"w-3 h-3 rounded-full bg-indigo-500"}></div>
+            Category 1
+          </p>
+          <p className={"text-sm text-slate-600 flex items-center gap-2"}>
+            <div className={"w-3 h-3 rounded-full bg-yellow-500"}></div>
+            Category 2
+          </p>
+          <p className={"text-sm text-slate-600 flex items-center gap-2"}>
+            <div className={"w-3 h-3 rounded-full bg-teal-500"}></div>
+            Category 3
+          </p>
+        </div>
       </CardContent>
     </Card>
   )
