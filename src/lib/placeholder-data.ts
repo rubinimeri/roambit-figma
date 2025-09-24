@@ -65,3 +65,17 @@ export const sidebarData = [
     ]
   }
 ]
+
+export const chartData = Array.from({ length: 30 })
+  .fill(null)
+  .map((value, daysToSubtract) => {
+    const today = new Date();
+    const date = new Date(today.getTime() - daysToSubtract * 24 * 60 * 60 * 1000)
+    return {
+      date: date.toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+      }),
+      count: Math.floor(Math.random() * 60 + 1)
+    }
+  }).reverse()
