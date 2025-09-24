@@ -12,8 +12,6 @@ import {
 import {
   ChartConfig,
   ChartContainer,
-  ChartLegend,
-  ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
@@ -32,10 +30,10 @@ export default function ThoughtsChartArea({ className }: { className?: string })
       <CardHeader >
         <CardTitle>Chart Name</CardTitle>
       </CardHeader>
-      <CardContent className="px-6">
+      <CardContent className="px-6 h-full">
         {chartData && <ChartContainer
           config={chartConfig}
-          className="aspect-auto h-[250px] w-full"
+          className="aspect-auto h-full w-full"
         >
           <AreaChart data={chartData}>
             <defs>
@@ -84,7 +82,6 @@ export default function ThoughtsChartArea({ className }: { className?: string })
               cursor={false}
               content={
                 <ChartTooltipContent
-                  label={"Value"}
                   indicator="dot"
                   hideLabel={true}
                 />

@@ -1,6 +1,7 @@
 import React from 'react';
 import Sidebar from "@/components/sidebar";
 import ChartAreaGradient from "@/app/dashboard/chart-area-gradient";
+import BarChart from "./bar-chart"
 
 function Page() {
   return (
@@ -30,8 +31,8 @@ function Page() {
           </div>
         </header>
         <main className={"grid p-4 gap-4"}>
-          <div className={"grid gap-4 grid-flow-col"}>
-            <article className="p-5 bg-white grid gap-6 rounded-3xl">
+          <div className={"flex gap-4"}>
+            <article className="p-5 bg-white grid gap-6 rounded-3xl flex-1">
               <header>
                 <h2 className={"flex items-center gap-2"}>
                 <span aria-hidden="true">
@@ -51,7 +52,7 @@ function Page() {
                 </p>
               </div>
             </article>
-            <article className="p-5 bg-white grid gap-6 rounded-3xl">
+            <article className="p-5 bg-white grid gap-6 rounded-3xl flex-1">
               <header>
                 <h2 className={"flex items-center gap-2"}>
                 <span aria-hidden="true">
@@ -71,7 +72,7 @@ function Page() {
                 </p>
               </div>
             </article>
-            <article className="p-5 bg-white grid gap-6 rounded-3xl">
+            <article className="p-5 bg-white grid gap-6 rounded-3xl flex-1">
               <header>
                 <h2 className={"flex items-center gap-2"}>
                 <span aria-hidden="true">
@@ -91,7 +92,7 @@ function Page() {
                 </p>
               </div>
             </article>
-            <article className="p-5 bg-white grid  gap-6 rounded-3xl">
+            <article className="p-5 bg-white grid  gap-6 rounded-3xl flex-1">
               <header>
                 <h2 className={"flex items-center gap-2"}>
                 <span aria-hidden="true">
@@ -112,8 +113,9 @@ function Page() {
               </div>
             </article>
           </div>
-          <div className={""}>
-            <ChartAreaGradient className={"py-5 border-none shadow-none w-1/2 bg-white"}/>
+          <div className={"flex gap-4"}>
+            <ChartAreaGradient className={"py-5 border-none shadow-none flex-1 bg-white"}/>
+            <BarChart className={"py-5 border-none shadow-none flex-1 bg-white"} />
           </div>
         </main>
       </div>
