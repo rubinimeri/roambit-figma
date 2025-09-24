@@ -79,3 +79,14 @@ export const chartData = Array.from({ length: 30 })
       count: Math.floor(Math.random() * 60 + 1)
     }
   }).reverse()
+
+export const barChartData = [
+  { month: "January", value: 186 },
+  { month: "February", value: 305 },
+  { month: "March", value: 237 },
+  { month: "April", value: 73 },
+  { month: "May", value: 209 },
+  { month: "June", value: 214 },
+  { month: "July", value: 178 },
+  { month: "August", value: 270 },
+]
