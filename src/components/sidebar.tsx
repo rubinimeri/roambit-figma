@@ -33,7 +33,7 @@ export default function Sidebar() {
                     href={link.url}
                     key={j}
                     className={clsx(
-                      "flex gap-3 px-4 py-[10px] text-sm text-slate-700 rounded-2xl link-hover",
+                      "flex gap-3 px-4 py-[10px] text-sm text-slate-700 rounded-2xl link-hover font-sans-2",
                       link.title === "Dashboard" && "link-primary"
                     )}>
                     <img src={link.iconUrl} alt="icon" width={20} className={"h-5"}/>
