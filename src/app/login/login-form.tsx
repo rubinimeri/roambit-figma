@@ -21,6 +21,8 @@ export default function LoginForm() {
   const [error, setError] = useState<null | string>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
+  const numAsterisks = "*".repeat(password.length)
+
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
@@ -34,6 +36,24 @@ export default function LoginForm() {
     setLoading(false);
     setError("Incorrect email or password!")
   }
+
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const masked = e.target.value; // whatever is visible (✱…✱)
+    const maskedLength = masked.length;
+
+    if (maskedLength < password.length) {
+      // User deleted characters (could be backspace, delete, or selecting & clearing)
+      const diff = password.length - maskedLength;
+      setPassword((prev) => prev.slice(0, -diff));
+    } else if (maskedLength > password.length) {
+      // User added characters
+      // Get the last typed character from native event
+      const lastChar = e.nativeEvent as InputEvent;
+      if (lastChar.data) {
+        setPassword((prev) => prev + lastChar.data);
+      }
+    }
+  };
   return (
     <form className={"grid gap-8"} onSubmit={onSubmit}>
       <div className={"grid gap-4"}>
@@ -53,11 +73,13 @@ export default function LoginForm() {
         </div>
         <div className={"relative"}>
           <Input
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
+            value={numAsterisks}
+            onChange={handlePasswordChange}
+            type="text"
             name={"password"}
-            placeholder={"Password"}/>
+            placeholder={"Password"}
+            autoComplete="off"
+          />
           <img
             src="/login/key.png"
             alt="email"
@@ -75,7 +97,7 @@ export default function LoginForm() {
         {error && <p className={"text-red-500"}>{error}</p>}
       </div>
       <button
-        className={"bg-primary py-3 px-8 rounded-2xl font-semibold cursor-pointer h-11 hover:opacity-90"}
+        className={"bg-primary py-3 px-8 rounded-2xl font-medium cursor-pointer h-11 hover:opacity-90"}
         type="submit">
         {loading ?
           <img src="/login/loading.png" width={24} alt="loading" className={"animate-spin mx-auto"}/> :
