@@ -1,16 +1,21 @@
 "use client"
 
-import React, {FormEvent, useState} from 'react';
+import
+  React,
+  {
+    FormEvent,
+    useState
+  } from 'react';
 import Input from "@/components/ui/input";
-import {redirect} from "next/navigation";
-import {sleep} from "@/lib/utils";
+import { redirect } from "next/navigation";
+import { sleep } from "@/lib/utils";
 
 const exampleData = {
   email: "johndoe@gmail.com",
   password: "123456",
 }
 
-function LoginForm() {
+export default function LoginForm() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState<null | string>(null);
@@ -79,5 +84,3 @@ function LoginForm() {
     </form>
   );
 }
-
-export default LoginForm;

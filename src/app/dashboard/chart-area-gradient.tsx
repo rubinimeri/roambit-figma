@@ -24,7 +24,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export default function ThoughtsChartArea({ className }: { className?: string }) {
+export default function ChartAreaGradient({ className }: { className?: string }) {
   return (
     <Card className={cn("", className)}>
       <CardHeader >

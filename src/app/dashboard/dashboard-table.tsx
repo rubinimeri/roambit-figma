@@ -1,9 +1,20 @@
 import React from 'react';
-import {Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
-import {Card, CardHeader, CardTitle} from "@/components/ui/card";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow
+} from "@/components/ui/table";
+import {
+  Card,
+  CardHeader,
+  CardTitle
+} from "@/components/ui/card";
 import {cn} from "@/lib/utils";
 
-function DashboardTable({ className }: { className?: string }) {
+export default function DashboardTable({ className }: { className?: string }) {
   return (
     <Card
       className={cn("py-4 px-5 pb-0 bg-white border-none shadow-none ", className)}>
@@ -49,5 +60,3 @@ function DashboardTable({ className }: { className?: string }) {
     </Card>
   );
 }
-
-export default DashboardTable;

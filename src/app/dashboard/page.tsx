@@ -1,11 +1,11 @@
 import React from 'react';
 import Sidebar from "@/components/sidebar";
 import ChartAreaGradient from "@/app/dashboard/chart-area-gradient";
-import BarChart from "./bar-chart"
-import {PieChartDonut} from "@/app/dashboard/pie-chart-donut";
+import MonthBarChart from "@/app/dashboard/month-bar-chart"
+import PieChartDonut from "@/app/dashboard/pie-chart-donut";
 import DashboardTable from "@/app/dashboard/dashboard-table";
 
-function Page() {
+export default function Page() {
   return (
     <div className={"flex"}>
       <Sidebar />
@@ -117,7 +117,7 @@ function Page() {
           </div>
           <div className={"flex gap-4"}>
             <ChartAreaGradient className={"py-5 border-none shadow-none flex-1 bg-white"}/>
-            <BarChart className={"py-5 border-none shadow-none flex-1 bg-white"} />
+            <MonthBarChart className={"py-5 border-none shadow-none flex-1 bg-white"} />
           </div>
           <div className={"grid grid-cols-3 gap-4"}>
             <PieChartDonut className={"py-5 border-none shadow-none bg-white"} />
@@ -129,5 +129,3 @@ function Page() {
     </div>
   );
 }
-
-export default Page;

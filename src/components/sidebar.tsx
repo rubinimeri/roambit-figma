@@ -1,8 +1,8 @@
 import React from 'react';
-import {sidebarData} from "@/lib/placeholder-data";
-import {clsx} from "clsx";
+import { sidebarData } from "@/lib/placeholder-data";
+import { clsx } from "clsx";
 
-function Sidebar() {
+export default function Sidebar() {
   return (
     <div
       data-slot="sidebar"
@@ -58,5 +58,3 @@ function Sidebar() {
     </div>
   );
 }
-
-export default Sidebar;

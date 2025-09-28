@@ -23,7 +23,7 @@ type ChartContextProps = {
 
 const ChartContext = React.createContext<ChartContextProps | null>(null)
 
-function useChart() {
+export function useChart() {
   const context = React.useContext(ChartContext)
 
   if (!context) {
@@ -33,7 +33,7 @@ function useChart() {
   return context
 }
 
-function ChartContainer({
+export function ChartContainer({
   id,
   className,
   children,
@@ -101,9 +101,9 @@ ${colorConfig
   )
 }
 
-const ChartTooltip = RechartsPrimitive.Tooltip
+export const ChartTooltip = RechartsPrimitive.Tooltip
 
-function ChartTooltipContent({
+export function ChartTooltipContent({
   active,
   payload,
   className,
@@ -249,9 +249,9 @@ function ChartTooltipContent({
   )
 }
 
-const ChartLegend = RechartsPrimitive.Legend
+export const ChartLegend = RechartsPrimitive.Legend
 
-function ChartLegendContent({
+export function ChartLegendContent({
   className,
   hideIcon = false,
   payload,
@@ -308,7 +308,7 @@ function ChartLegendContent({
 }
 
 // Helper to extract item config from a payload.
-function getPayloadConfigFromPayload(
+export function getPayloadConfigFromPayload(
   config: ChartConfig,
   payload: unknown,
   key: string
@@ -344,13 +344,4 @@ function getPayloadConfigFromPayload(
   return configLabelKey in config
     ? config[configLabelKey]
     : config[key as keyof typeof config]
-}
-
-export {
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-  ChartLegend,
-  ChartLegendContent,
-  ChartStyle,
 }

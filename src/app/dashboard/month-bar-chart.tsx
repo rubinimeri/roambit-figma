@@ -1,6 +1,12 @@
 "use client"
 
-import {Bar, BarChart, CartesianGrid, XAxis, YAxis} from "recharts"
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  XAxis,
+  YAxis
+} from "recharts"
 
 import {
   Card,
@@ -14,7 +20,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
-import {cn} from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import * as React from "react";
 import { barChartData } from "@/lib/placeholder-data"
 

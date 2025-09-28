@@ -1,5 +1,4 @@
 import React from "react";
-import Input from "@/components/ui/input";
 import LoginForm from "@/app/login/login-form";
 
 export default function Page() {

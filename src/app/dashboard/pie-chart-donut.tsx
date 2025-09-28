@@ -5,18 +5,17 @@ import {Label, Pie, PieChart} from "recharts"
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
 import {
   ChartConfig,
-  ChartContainer, ChartLegend, ChartLegendContent,
+  ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
 import { pieChartData } from "@/lib/placeholder-data";
-import {cn} from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 
 const chartConfig = {
@@ -34,7 +33,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export function PieChartDonut({ className }: { className?: string }) {
+export default function PieChartDonut({ className }: { className?: string }) {
   return (
     <Card className={cn("flex flex-col", className)}>
       <CardHeader className="items-center pb-0">
