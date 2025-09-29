@@ -66,29 +66,28 @@ export const sidebarData = [
   }
 ]
 
-export const chartData = Array.from({ length: 30 })
-  .fill(null)
-  .map((value, daysToSubtract) => {
-    const today = new Date();
-    const date = new Date(today.getTime() - daysToSubtract * 24 * 60 * 60 * 1000)
-    return {
-      date: date.toLocaleDateString("en-US", {
-        month: "short",
-        day: "numeric",
-      }),
-      count: Math.floor(Math.random() * 60 + 1)
-    }
-  }).reverse()
+export const chartData = [
+  { date: "Eki", count: 40 },
+  { date: "Eki", count: 40 },
+  { date: "Kas", count: 45 },
+  { date: "Ara", count: 43 },
+  { date: "Oca", count: 60 },
+  { date: "Şub", count: 44 },
+  { date: "Mar", count: 30 },
+  { date: "Nis", count: 35 },
+  { date: "May", count: 25 },
+]
 
 export const barChartData = [
-  { month: "January", value: 186 },
-  { month: "February", value: 305 },
-  { month: "March", value: 237 },
-  { month: "April", value: 73 },
-  { month: "May", value: 209 },
-  { month: "June", value: 214 },
-  { month: "July", value: 178 },
-  { month: "August", value: 270 },
+  { month: "Eki", value: 37 },
+  { month: "Kas", value: 33 },
+  { month: "Ara", value: 30 },
+  { month: "Oca", value: 40 },
+  { month: "Şub", value: 35 },
+  { month: "Mar", value: 27 },
+  { month: "Nis", value: 30 },
+  { month: "May", value: 59 },
+  { month: "May", value: 59 },
 ]
 
 export const pieChartData = [

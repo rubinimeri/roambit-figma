@@ -23,6 +23,10 @@ import {
 import { cn } from "@/lib/utils";
 import * as React from "react";
 import { barChartData } from "@/lib/placeholder-data"
+import {
+  useEffect,
+  useState
+} from "react";
 
 const chartConfig = {
   data: {
@@ -31,15 +35,37 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
+const MOBILE_BAR_WIDTH = 16;
+const DESKTOP_BAR_WIDTH = 24;
+const MOBILE_PADDING = 16;
+const DESKTOP_PADDING = 0;
+
 export default function MonthBarChart({ className }: { className?: string }) {
+  const [isScreenMobile, setIsScreenMobile] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsScreenMobile(window.innerWidth < 600);
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <Card className={cn("", className)}>
+    <Card className={cn("min-h-[350px]", className)}>
       <CardHeader>
         <CardTitle>Bar Chart</CardTitle>
       </CardHeader>
-      <CardContent>
-        <ChartContainer config={chartConfig}>
-          <BarChart accessibilityLayer data={barChartData} barSize={24}>
+      <CardContent className={"overflow-x-auto max-[600px]:pr-2"}>
+        <ChartContainer
+          className={"min-w-[320px] min-h-[264px] max-[1150px]:aspect-video max-[600px]:"}
+          config={chartConfig}>
+          <BarChart
+            accessibilityLayer
+            data={barChartData}
+            barSize={isScreenMobile ? MOBILE_BAR_WIDTH : DESKTOP_BAR_WIDTH}
+          >
             <CartesianGrid stroke={"#F1F5F9"}/>
             <XAxis
               dataKey="month"
@@ -51,7 +77,10 @@ export default function MonthBarChart({ className }: { className?: string }) {
                 fill: "#62748E",
               }}
               tickMargin={8}
-              minTickGap={32}
+              padding={{
+                left: isScreenMobile ? MOBILE_PADDING : DESKTOP_PADDING,
+                right: isScreenMobile ? MOBILE_PADDING : DESKTOP_PADDING
+              }}
             />
             <YAxis
               dataKey="value"
@@ -63,9 +92,8 @@ export default function MonthBarChart({ className }: { className?: string }) {
                 fill: "#62748E",
               }}
               tickMargin={8}
-              tickCount={6}
-              minTickGap={4}
-              width={40}
+              ticks={[0, 15, 30, 45, 60, 75]}
+              width={32}
               tickFormatter={(value) => value + ".0"}
             />
             <ChartTooltip

@@ -5,6 +5,11 @@
 /*---break---*/
 @custom-variant dark (&:is(.dark *));
 
+:root {
+  --background: #F8FAFC;
+  --foreground: #171717;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -14,12 +19,10 @@
   --color-primary: #46ecd5;
 }
 
-/*@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}*/
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
 
 @layer base {
     :root {
@@ -40,13 +43,16 @@
 }
 
 @layer components {
-    .btn-header {
-        @apply px-4 py-3 bg-white rounded-xl cursor-pointer;
-    }
-    .link-primary {
-        @apply bg-primary font-bold text-slate-900
-    }
-    .link-hover {
-        @apply hover:bg-primary hover:text-slate-900 transition-colors duration-200
-    }
+  .btn-header {
+      @apply px-4 py-3 bg-white rounded-xl cursor-pointer w-11 h-10 flex items-center justify-center max-[800px]:hidden;
+  }
+  .link-primary {
+      @apply bg-primary font-bold text-slate-900
+  }
+  .link-hover {
+      @apply hover:bg-primary hover:text-slate-900 transition-colors duration-200
+  }
+  .grid-card {
+    @apply p-5 bg-white grid gap-6 rounded-3xl flex-1 h-[138px];
+  }
 }

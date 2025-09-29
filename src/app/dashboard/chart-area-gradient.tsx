@@ -1,7 +1,13 @@
 "use client"
 
 import * as React from "react"
-import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts"
+import {
+  Area,
+  AreaChart,
+  CartesianGrid,
+  XAxis,
+  YAxis
+} from "recharts"
 
 import {
   Card,
@@ -15,8 +21,8 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
-import {chartData} from "@/lib/placeholder-data";
-import {cn} from "@/lib/utils";
+import { chartData } from "@/lib/placeholder-data";
+import { cn }  from "@/lib/utils";
 
 const chartConfig = {
   count: {
@@ -30,10 +36,10 @@ export default function ChartAreaGradient({ className }: { className?: string })
       <CardHeader >
         <CardTitle>Chart Name</CardTitle>
       </CardHeader>
-      <CardContent className="px-6 h-full">
-        {chartData && <ChartContainer
+      <CardContent className="px-6 overflow-x-auto max-[600px]:pr-2">
+        <ChartContainer
           config={chartConfig}
-          className="aspect-auto h-full w-full"
+          className="min-w-[320px] min-h-[264px] aspect-video"
         >
           <AreaChart data={chartData}>
             <defs>
@@ -60,11 +66,12 @@ export default function ChartAreaGradient({ className }: { className?: string })
               tick={{
                 fill: "#62748E",
               }}
+              tickFormatter={(value, index) => index === 0 || index === chartData.length - 1 ? "" : value}
               tickMargin={8}
-              minTickGap={32}
+              minTickGap={0}
             />
             <YAxis
-              dataKey="value"
+              dataKey="count"
               tickLine={false}
               axisLine={{
                 stroke: "#F1F5F9"
@@ -72,9 +79,8 @@ export default function ChartAreaGradient({ className }: { className?: string })
               tick={{
                 fill: "#62748E",
               }}
+              ticks={[0, 15, 30, 45, 60, 75]}
               tickMargin={8}
-              tickCount={6}
-              minTickGap={4}
               width={32}
               tickFormatter={(value) => value + ".0"}
             />
@@ -94,10 +100,9 @@ export default function ChartAreaGradient({ className }: { className?: string })
               stroke="var(--chart-2)"
               strokeWidth={2}
               stackId="a"
-              baseValue={chartData[0].count}
             />
           </AreaChart>
-        </ChartContainer>}
+        </ChartContainer>
       </CardContent>
     </Card>
   )

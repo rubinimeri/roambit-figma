@@ -6,7 +6,7 @@ export default function Sidebar() {
   return (
     <div
       data-slot="sidebar"
-      className={"bg-sidebar border border-slate-100 flex h-[1471px] w-[276px] flex-col shrink-0 text-slate-900"}
+      className={"bg-sidebar border border-slate-100 flex h-[1471px] w-[276px] flex-col shrink-0 text-slate-900 max-[800px]:hidden"}
     >
       <div className={"py-[26px] pl-5 flex justify-between border border-slate-100"}>
         <img src="/logo-light.png" alt="logo" width={124} className={"h-7"}/>

@@ -1,6 +1,10 @@
 "use client"
 
-import {Label, Pie, PieChart} from "recharts"
+import {
+  Label,
+  Pie,
+  PieChart
+} from "recharts"
 
 import {
   Card,
@@ -16,7 +20,6 @@ import {
 } from "@/components/ui/chart"
 import { pieChartData } from "@/lib/placeholder-data";
 import { cn } from "@/lib/utils";
-
 
 const chartConfig = {
   categoryOne: {
@@ -53,7 +56,7 @@ export default function PieChartDonut({ className }: { className?: string }) {
               data={pieChartData}
               dataKey="value"
               nameKey="category"
-              innerRadius={68}
+              innerRadius={75}
               cornerRadius={10}
               width={24}
               paddingAngle={-10}
@@ -92,16 +95,16 @@ export default function PieChartDonut({ className }: { className?: string }) {
         </ChartContainer>
         <div className={"grid grid-cols-2 gap-4"}>
           <div className={"text-sm text-slate-600 flex items-center gap-2"}>
-            <div className={"w-3 h-3 rounded-full bg-indigo-500"}></div>
-            Category 1
+            <div className={"w-3 h-3 rounded-full bg-indigo-500 mb-[2px]"}></div>
+            <span className={"h-[17px]"}>Category 1</span>
           </div>
           <div className={"text-sm text-slate-600 flex items-center gap-2"}>
             <div className={"w-3 h-3 rounded-full bg-yellow-500"}></div>
-            Category 2
+            <span className={"h-[17px]"}>Category 2</span>
           </div>
           <div className={"text-sm text-slate-600 flex items-center gap-2"}>
             <div className={"w-3 h-3 rounded-full bg-teal-500"}></div>
-            Category 3
+            <span className={"h-[17px]"}>Category 3</span>
           </div>
         </div>
       </CardContent>

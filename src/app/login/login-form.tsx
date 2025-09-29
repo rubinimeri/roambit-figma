@@ -1,11 +1,10 @@
 "use client"
 
 import
-  React,
-  {
-    FormEvent,
-    useState
-  } from 'react';
+  React, {
+  FormEvent,
+  useState
+} from 'react';
 import Input from "@/components/ui/input";
 import { redirect } from "next/navigation";
 import { sleep } from "@/lib/utils";
@@ -38,16 +37,13 @@ export default function LoginForm() {
   }
 
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const masked = e.target.value; // whatever is visible (✱…✱)
+    const masked = e.target.value;
     const maskedLength = masked.length;
 
     if (maskedLength < password.length) {
-      // User deleted characters (could be backspace, delete, or selecting & clearing)
       const diff = password.length - maskedLength;
       setPassword((prev) => prev.slice(0, -diff));
     } else if (maskedLength > password.length) {
-      // User added characters
-      // Get the last typed character from native event
       const lastChar = e.nativeEvent as InputEvent;
       if (lastChar.data) {
         setPassword((prev) => prev + lastChar.data);
