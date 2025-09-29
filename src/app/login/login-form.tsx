@@ -8,6 +8,7 @@ import
 import Input from "@/components/ui/input";
 import { redirect } from "next/navigation";
 import { sleep } from "@/lib/utils";
+import {clsx} from "clsx";
 
 const exampleData = {
   email: "johndoe@gmail.com",
@@ -33,10 +34,11 @@ export default function LoginForm() {
     }
 
     setLoading(false);
-    setError("Incorrect email or password!")
+    setError("Şifre yanlış. Tekrar deneyin.")
   }
 
   const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setError(null)
     const masked = e.target.value;
     const maskedLength = masked.length;
 
@@ -53,44 +55,49 @@ export default function LoginForm() {
   return (
     <form className={"grid gap-8"} onSubmit={onSubmit}>
       <div className={"grid gap-4"}>
-        <div className={"relative"}>
-          <Input
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            type="text"
-            name={"email"}
-            placeholder={"Email"}/>
-          <img
-            src="/login/email.png"
-            alt="email"
-            aria-hidden="true"
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 pointer-events-none"
-          />
-        </div>
-        <div className={"relative"}>
-          <Input
-            value={numAsterisks}
-            onChange={handlePasswordChange}
-            type="text"
-            name={"password"}
-            placeholder={"Password"}
-            autoComplete="off"
-          />
-          <img
-            src="/login/key.png"
-            alt="email"
-            aria-hidden="true"
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 pointer-events-none"
-          />
-          <img
-            src="/login/view-off.png"
-            alt="email"
-            aria-hidden="true"
-            className="absolute right-4 w-5 top-1/2 -translate-y-1/2 pointer-events-none"
-          />
-        </div>
+        <Input
+          value={email}
+          className={"pr-4"}
+          LeftIcon={
+            <img
+              src="/login/email.png"
+              alt="email"
+              aria-hidden="true"
+              className="w-5 h-5 pointer-events-none"
+            />
+          }
+          onChange={(e) => setEmail(e.target.value)}
+          type="text"
+          name={"email"}
+          placeholder={"Email *"}/>
+
+        <Input
+          className={clsx(error && "border-red-500 text-red-500 focus-within:border-red-500 placeholder:text-red-500")}
+          LeftIcon={
+            <img
+              src={`${error ? "/login/red-key.png" : "/login/key.png"}`}
+              alt="email"
+              aria-hidden="true"
+              className="w-5 h-5 pointer-events-none"
+            />
+          }
+          RightIcon={
+            <img
+              src={`${error ? "/login/red-view-off.png" : "/login/view-off.png"}`}
+              alt="view password"
+              aria-hidden="true"
+              className="w-5 h-5 pointer-events-none shrink-0"
+            />
+          }
+          value={numAsterisks}
+          onChange={handlePasswordChange}
+          type="text"
+          name={"password"}
+          placeholder={"Password *"}
+          autoComplete="off"
+        />
+        {error && <span className={"text-red-500 text-[13px] h-4"}>{error}</span>}
         <a href={"#"} className={"text-slate-600 text-[13px] text-right"}>Şifremi Unuttum</a>
-        {error && <p className={"text-red-500"}>{error}</p>}
       </div>
       <button
         className={"bg-primary py-3 px-8 rounded-2xl font-medium cursor-pointer h-11 hover:opacity-90"}

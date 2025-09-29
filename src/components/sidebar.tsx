@@ -18,13 +18,9 @@ export default function Sidebar() {
         {sidebarData.map((linkGroup, i) => (
           <React.Fragment key={i}>
             <div className={"grid gap-3"}>
-              <div className={"text-xs pl-4 pr-2 flex items-center justify-between"}>
-                <p className={"text-slate-500"}>{linkGroup.title.toUpperCase()}</p>
-                <div
-                  className={"p-1 bg-slate-100 rounded-full flex items-center justify-center cursor-pointer"}
-                >
-                  <img src="/dashboard/caret-up.png" alt="close link group" width={16}/>
-                </div>
+              <div className={"text-xs pl-4 pr-2 flex items-center justify-between h-4"}>
+                <p className={"text-slate-500 font-sans-2"}>{linkGroup.title.toUpperCase()}</p>
+                <img src="/dashboard/caret-up.png" alt="close link group" width={16}/>
               </div>
 
               <nav className={"grid gap-2"}>
@@ -33,7 +29,7 @@ export default function Sidebar() {
                     href={link.url}
                     key={j}
                     className={clsx(
-                      "flex gap-3 px-4 py-[10px] text-sm text-slate-700 rounded-2xl link-hover font-sans-2",
+                      "flex gap-3 px-4 py-[10px] text-sm text-slate-700 rounded-xl link-hover font-sans-2",
                       link.title === "Dashboard" && "link-primary"
                     )}>
                     <img src={link.iconUrl} alt="icon" width={20} className={"h-5"}/>

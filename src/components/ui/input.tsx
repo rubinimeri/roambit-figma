@@ -2,14 +2,25 @@ import React from "react";
 import { cn } from "@/lib/utils";
 
 export default function Input({
- className,
- ...props
-}: React.ComponentProps<"input">
+  className,
+  LeftIcon,
+  RightIcon,
+  ...props
+}: React.ComponentProps<"input"> & {
+  LeftIcon?: React.ReactNode;
+  RightIcon?: React.ReactNode;
+}
 ) {
   return (
-    <input
-      className={cn("w-full border bg-white border-slate-200 pl-[46px] pr-11 py-3 focus:border-slate-900 outline-none rounded-2xl", className)}
-      {...props}
-    />
+    <div className={cn("flex items-center h-[48px] py-[14.5px] pl-4 pr-3 gap-3 bg-white border border-slate-200 focus-within:border-slate-900 rounded-2xl", className)}>
+      <div className={"flex-1 flex items-center gap-3 w-full"}>
+        {LeftIcon && LeftIcon}
+        <input
+          className={"self-end h-[19px] text-[16px] flex-1 outline-none placeholder:text-[16px]}"}
+          {...props}
+        />
+      </div>
+      {RightIcon && RightIcon}
+    </div>
   )
 }
