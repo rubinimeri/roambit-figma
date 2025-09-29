@@ -73,7 +73,7 @@ export default function PieChartDonut({ className }: { className?: string }) {
                       >
                         <tspan
                           x={viewBox.cx}
-                          y={(viewBox.cy || 0)}
+                          y={(viewBox.cy || 0) - 6}
                           className="text-[32px] font-bold"
                         >
                           12
