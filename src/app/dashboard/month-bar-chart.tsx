@@ -23,10 +23,7 @@ import {
 import { cn } from "@/lib/utils";
 import * as React from "react";
 import { barChartData } from "@/lib/placeholder-data"
-import {
-  useEffect,
-  useState
-} from "react";
+import useIsScreenMobile from "@/hooks/useIsScreenMobile";
 
 const chartConfig = {
   data: {
@@ -41,16 +38,7 @@ const MOBILE_PADDING = 16;
 const DESKTOP_PADDING = 0;
 
 export default function MonthBarChart({ className }: { className?: string }) {
-  const [isScreenMobile, setIsScreenMobile] = useState<boolean>(false);
-
-  useEffect(() => {
-    const handleResize = () => setIsScreenMobile(window.innerWidth < 600);
-
-    window.addEventListener("resize", handleResize);
-    handleResize();
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  const isScreenMobile = useIsScreenMobile();
 
   return (
     <Card className={cn("min-h-[350px]", className)}>

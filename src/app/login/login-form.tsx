@@ -9,6 +9,7 @@ import Input from "@/components/ui/input";
 import { redirect } from "next/navigation";
 import { sleep } from "@/lib/utils";
 import {clsx} from "clsx";
+import useIsScreenMobile from "@/hooks/useIsScreenMobile";
 
 const exampleData = {
   email: "johndoe@gmail.com",
@@ -20,6 +21,7 @@ export default function LoginForm() {
   const [password, setPassword] = useState("")
   const [error, setError] = useState<null | string>(null);
   const [loading, setLoading] = useState<boolean>(false);
+  const isScreenMobile = useIsScreenMobile();
 
   const numAsterisks = "*".repeat(password.length)
 
@@ -65,6 +67,13 @@ export default function LoginForm() {
               aria-hidden="true"
               className="w-5 h-5 pointer-events-none"
             />
+          }
+          RightIcon={
+            isScreenMobile &&
+            <div className={"flex items-center gap-3"}>
+              <span className={"h-[19px] w-0 border border-slate-200"}></span>
+              <p className={"leading-none self-end text-[15px]"}>Düzenle</p>
+            </div>
           }
           onChange={(e) => setEmail(e.target.value)}
           type="text"

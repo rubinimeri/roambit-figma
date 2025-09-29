@@ -47,7 +47,7 @@ export default function ChartAreaGradient({ className }: { className?: string })
                 <stop
                   offset="5%"
                   stopColor="var(--chart-2)"
-                  stopOpacity={0.5}
+                  stopOpacity={0.4}
                 />
                 <stop
                   offset="95%"

@@ -8,8 +8,8 @@ export default function Sidebar() {
       data-slot="sidebar"
       className={"bg-sidebar border border-slate-100 flex h-[1471px] w-[276px] flex-col shrink-0 text-slate-900 max-[800px]:hidden"}
     >
-      <div className={"py-[26px] pl-5 flex justify-between border border-slate-100"}>
-        <img src="/logo-light.png" alt="logo" width={124} className={"h-7"}/>
+      <div className={"py-[26px] pl-5 flex justify-between border border-slate-100 h-20"}>
+        <img src="/logo-light.png" alt="logo" width={124} height={28} className={"h-7"}/>
         <div className={"p-1 bg-slate-100 rounded-full flex items-center justify-center"}>
           <img src="/dashboard/caret-left.png" alt="close sidebar" width={16}/>
         </div>

@@ -5,14 +5,14 @@ export default function Page() {
   return (
     <div className={"max-[600px]:px-6"}>
 
-      <header className={"mt-10"}>
+      <header className={"mt-10 max-[600px]:py-[22px] max-[600px]:px-6 max-[600px]:mt-0"}>
         <img className={"mx-auto"} src="/logo-light.png" alt="logo" width={144}/>
       </header>
 
       <main>
-        <div className={"mt-[144px] h-22"}>
+        <div className={"mt-[144px] h-20 max-[600px]:mt-14"}>
           <h1 className={"font-medium text-[32px] text-slate-900 max-w-[816px] text-center mx-auto"}>Reseller’a Hoş Geldin</h1>
-          <h2 className={"text-slate-600 max-w-[816px] text-center mx-auto mt-4"}>Hesabınız ile oturum açın.</h2>
+          <h2 className={"text-slate-600 max-w-[816px] text-center mx-auto mt-2"}>Hesabınız ile oturum açın.</h2>
         </div>
         <div className={"mx-auto max-w-[480px] mt-[72px] grid gap-8"}>
           <LoginForm />

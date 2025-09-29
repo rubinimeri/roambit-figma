@@ -47,9 +47,9 @@ export default function Page() {
                 </h2>
               </header>
 
-              <div className={"grid gap-2"}>
+              <div className={"grid gap-3"}>
                 <p className="text-[28px] h-8">
-                  <strong>1,221</strong>
+                  <strong>1.221</strong>
                 </p>
 
                 <p className="text-[#00a86b] text-xs" aria-label="Increased by 56.9 percent">
@@ -57,7 +57,7 @@ export default function Page() {
                 </p>
               </div>
             </article>
-            <article className="grid-card">
+            <article className="grid-card pb-3">
               <header>
                 <h2 className={"font-sans-3 text-sm flex items-center gap-2"}>
                 <span aria-hidden="true">
@@ -67,17 +67,17 @@ export default function Page() {
                 </h2>
               </header>
 
-              <div className={"grid gap-2"}>
-                <p className="text-[28px] h-8">
+              <div className={"flex flex-col gap-3 justify-between"}>
+                <p className="text-[32px] h-8">
                   <strong>32.892</strong>
                 </p>
 
-                <p className="text-[#00a86b] text-xs" aria-label="Increased by 56.9 percent">
-                  +29.9%
+                <p className="text-slate-500 text-[13px] leading-none" aria-label="Increased by 56.9 percent">
+                  Tüm Zamanlar
                 </p>
               </div>
             </article>
-            <article className="grid-card">
+            <article className="grid-card pb-3">
               <header>
                 <h2 className={"font-sans-3 text-sm flex items-center gap-2"}>
                 <span aria-hidden="true">
@@ -87,13 +87,16 @@ export default function Page() {
                 </h2>
               </header>
 
-              <div className={"grid gap-2"}>
-                <p className="text-[28px] h-8">
-                  <strong>237</strong>
+              <div className={"flex flex-col gap-3 justify-between"}>
+                <p className="text-[32px] h-8">
+                  <strong>
+                    237
+                    <span className={"text-slate-400 text-xl ml-2"}>adet</span>
+                  </strong>
                 </p>
 
-                <p className="text-[#00a86b] text-xs" aria-label="Increased by 56.9 percent">
-                  +12.4%
+                <p className="text-slate-500 text-[13px] leading-none" aria-label="Increased by 56.9 percent">
+                  Tüm Zamanlar
                 </p>
               </div>
             </article>
@@ -107,7 +110,7 @@ export default function Page() {
                 </h2>
               </header>
 
-              <div className={"grid gap-2"}>
+              <div className={"grid gap-3"}>
                 <p className="text-[28px] h-8">
                   <strong>18.905</strong>
                 </p>

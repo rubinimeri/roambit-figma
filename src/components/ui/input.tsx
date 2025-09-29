@@ -12,11 +12,11 @@ export default function Input({
 }
 ) {
   return (
-    <div className={cn("flex items-center h-[48px] py-[14.5px] pl-4 pr-3 gap-3 bg-white border border-slate-200 focus-within:border-slate-900 rounded-2xl", className)}>
+    <div className={cn("flex items-center h-[44px] py-[14.5px] pl-4 pr-3 gap-3 bg-white border border-slate-200 focus-within:border-slate-900 rounded-2xl", className)}>
       <div className={"flex-1 flex items-center gap-3 w-full"}>
         {LeftIcon && LeftIcon}
         <input
-          className={"self-end h-[19px] text-[16px] flex-1 outline-none placeholder:text-[16px]}"}
+          className={"self-end h-[19px] text-[16px] w-full outline-none placeholder:text-[16px]"}
           {...props}
         />
       </div>
