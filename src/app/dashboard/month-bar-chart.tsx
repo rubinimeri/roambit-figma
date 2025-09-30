@@ -23,7 +23,7 @@ import {
 import { cn } from "@/lib/utils";
 import * as React from "react";
 import { barChartData } from "@/lib/placeholder-data"
-import useIsScreenMobile from "@/hooks/useIsScreenMobile";
+import useIsScreenMobile from "@/hooks/use-is-screen-mobile";
 
 const chartConfig = {
   data: {
