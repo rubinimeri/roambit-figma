@@ -1,4 +1,3 @@
-import React from 'react';
 import Sidebar from "@/components/sidebar";
 import ChartAreaGradient from "@/app/dashboard/chart-area-gradient";
 import MonthBarChart from "@/app/dashboard/month-bar-chart"

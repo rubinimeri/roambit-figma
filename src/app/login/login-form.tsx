@@ -5,11 +5,12 @@ import
   FormEvent,
   useState
 } from 'react';
+import { clsx } from "clsx";
+
 import Input from "@/components/ui/input";
+import useIsScreenMobile from "@/hooks/use-is-screen-mobile";
 import { redirect } from "next/navigation";
 import { sleep } from "@/lib/utils";
-import {clsx} from "clsx";
-import useIsScreenMobile from "@/hooks/use-is-screen-mobile";
 
 const exampleData = {
   email: "johndoe@gmail.com",

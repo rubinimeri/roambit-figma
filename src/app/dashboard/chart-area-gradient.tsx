@@ -9,6 +9,8 @@ import {
   YAxis
 } from "recharts"
 
+import { chartData } from "@/lib/placeholder-data";
+import { cn }  from "@/lib/utils";
 import {
   Card,
   CardContent,
@@ -21,8 +23,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
-import { chartData } from "@/lib/placeholder-data";
-import { cn }  from "@/lib/utils";
+
 
 const chartConfig = {
   count: {

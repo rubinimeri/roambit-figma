@@ -6,6 +6,8 @@ import {
   PieChart
 } from "recharts"
 
+import { pieChartData } from "@/lib/placeholder-data";
+import { cn } from "@/lib/utils";
 import {
   Card,
   CardContent,
@@ -18,8 +20,6 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
-import { pieChartData } from "@/lib/placeholder-data";
-import { cn } from "@/lib/utils";
 
 const chartConfig = {
   categoryOne: {
